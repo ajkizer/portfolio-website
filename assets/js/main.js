@@ -27,6 +27,26 @@
     }, 100);
   });
 
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(typeWriter, 2500);
+  });
+
+  let typetext = document.getElementById("type-text");
+
+  let i = 0;
+  var txt =
+    "Full Stack Web Developer. Lambda School Student. Occasional Worker-Outer."; /* The text */
+  var speed = 100; /* The speed/duration of the effect in milliseconds */
+
+  function typeWriter() {
+    if (i < txt.length) {
+      typetext.style.marginTop = "-1.8%";
+      typetext.innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
   // Touch mode.
   if (browser.mobile) $body.addClass("is-touch");
   else {
